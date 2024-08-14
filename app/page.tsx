@@ -4,7 +4,7 @@ import { useActions, readStreamableValue } from 'ai/rsc';
 import { type AI } from './action';
 import { Settings } from './components/Settings';
 import { AttributionComponent } from './components/AttributionComponent';
-import { MobileNotSupported } from './components/Mobile';
+/*import { MobileNotSupported } from './components/Mobile';*/
 import InputComponent from './components/InputComponent';
 import { WeatherData } from './components/tools/Weather';
 import { SpotifyTrack } from './components/tools/Spotify';
@@ -122,9 +122,6 @@ const Main = () => {
   }, []);
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      {isMobile ? (
-        <MobileNotSupported />
-      ) : (
         <>
           <a
             href="https://git.new/ai-devices"
@@ -156,20 +153,7 @@ const Main = () => {
           )}
           <div className="flex flex-col items-center justify-center w-full h-full">
             <div className="flex flex-col items-center w-full px-4 relative">
-              <div className={`max-w-[700px] self-center absolute ${useRabbitMode ? 'top-[250px] left-1/2 transform -translate-x-1/2' : 'top-[200px] right-0'}`}>
-                {useRabbitMode ? (
-                  <img
-                    className="animate-slide-in-right w-full max-w-[395px] rabbit-animation"
-                    src="https://developersdigest.s3.amazonaws.com/r1.png"
-                    alt="Rabbit"
-                  />
-                ) : (
-                  <img
-                    className={`animate-slide-in-right w-full min-w-[700px]`}
-                    src="https://developersdigest.s3.amazonaws.com/hand-1.png"
-                    alt="Hand"
-                  />
-                )}
+              <div className={`max-w-[700px] self-center absolute ${useRabbitMode ? 'top-[350px] left-1/2 transform -translate-x-1/2' : 'top-[350px] right-0'}`}>
                 {useSpotify && (
                   <div className={`absolute left-0 bottom-0 flex items-center justify-end transform ${useRabbitMode ? 'left-[24px] top-[-240px]' : 'top-0 -translate-x-[300px] right-10'} z-10`}>
                     <SpotifyTrack trackId={useSpotify} width={useRabbitMode ? 260 : 300} height={useRabbitMode ? 80 : 80} />
@@ -207,7 +191,7 @@ const Main = () => {
             </div>
           </div>
         </>
-      )}
+      }
       {config.enableSettingsUIToggle && (
         <div
           className="absolute bottom-7 left-7 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center cursor-pointer"

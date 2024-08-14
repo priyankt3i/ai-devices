@@ -81,25 +81,25 @@ const InputComponent: React.FC<InputComponentProps> = ({
   };
 
   return (
-    <div className="absolute top-1/2 left-8 transform -translate-y-1/2 flex items-center justify-center max-w-[300px]">
+    <div className="center top-[350px] left-1/2 transform -translate-y-1/2 flex items-center justify-center max-w-[300px]">
       <div className="relative">
         {useRabbitMode ? (
-          <button
+          <img
+            src="https://developersdigest.s3.amazonaws.com/r1.png"
+            alt="Rabbit"
+            /*className={`w-full ${recording ? '' : ''} prevent-image-drag cursor-pointer`}*/
+            className="animate-slide-in-right w-full max-w-[395px] rabbit-animation"
             onMouseDown={handleRecording}
             onMouseUp={handleRecording}
             onTouchStart={handleRecording}
             onTouchEnd={handleRecording}
-            className="absolute top-0 left-[200px] right-0 w-full h-full bg-green-500 rounded-md flex items-center justify-center cursor-pointer"
-          >
-            <div className="text-center">
-              <p className={`text-md text-gray-500 rounded-xl p-10 text-white w-full ${recording ? 'bg-red-500' : 'bg-green-500'} prevent-image-drag cursor-pointer`}></p>
-            </div>
-          </button>
+          />
         ) : (
           <img
             src="https://developersdigest.s3.amazonaws.com/pin.png"
             alt="Second"
-            className={`w-full ${recording ? '' : ''} prevent-image-drag cursor-pointer`}
+            /*className={`w-full ${recording ? '' : ''} prevent-image-drag cursor-pointer`}*/
+            className={`animate-slide-in-right w-full max-w-[395px]`}
             onMouseDown={handleRecording}
             onMouseUp={handleRecording}
             onTouchStart={handleRecording}
