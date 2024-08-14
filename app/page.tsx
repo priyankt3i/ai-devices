@@ -191,7 +191,7 @@ const Main = () => {
             </div>
           </div>
         </>
-      }
+      )
       {config.enableSettingsUIToggle && (
         <div
           className="absolute bottom-7 left-7 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center cursor-pointer"
